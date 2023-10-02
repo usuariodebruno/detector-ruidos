@@ -1,6 +1,6 @@
 # Detector de ruídos para ambientes escolares
 
-> Este projeto propõe o desenvolvimento de um controlador de ruídos em ambientes de estudo, para minimizar os efeitos negativos do ruído na aprendizagem e no desempenho dos professores. Para isso, será desenvolvida uma placa com microcontroladores capazes de detectar a frequência de ruídos produzidos nos locais de estudo, acionando um LED e um painel digital para indicar quando a quantidade de ruído ultrapassar os níveis aceitáveis. A pesquisa buscará verificar a eficácia do controlador de ruídos na melhoria do ambiente escolar e sua exequibilidade na região do Campus Natal Central. 
+> Este projeto propõe o desenvolvimento de um controlador de ruídos em ambientes de estudo, para minimizar os efeitos negativos do ruído na aprendizagem e no desempenho dos professores. Para isso, será desenvolvida uma placa com micro controladores capazes de detectar a frequência de ruídos produzidos nos locais de estudo, acionando um LED e um painel digital para indicar quando a quantidade de ruído ultrapassar os níveis aceitáveis. A pesquisa buscará verificar a eficácia do controlador de ruídos na melhoria do ambiente escolar e sua exequibilidade na região do Campus Natal Central. 
 
 # Equipe e Formas de Contato
 
@@ -36,6 +36,6 @@ Nossa equipe utilizam as seguintes tecnologias para o desenvolvimento do nosso p
 
 ## Documentação
 
-Para acessar a documentação completa do projeto, incluindo informações detalhadas como layout eletrico do prototivos, componetes e códigos, visite o seguinte link:
+Para acessar a documentação completa do projeto, incluindo informações detalhadas como layout eletrico do protótipos, componetes e códigos, visite o seguinte link:
 
 [Documentação do Projeto](doc/documentacao.md)
