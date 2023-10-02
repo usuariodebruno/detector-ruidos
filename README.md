@@ -4,6 +4,11 @@ Este projeto propõe o desenvolvimento de um controlador de ruídos em ambientes
 
 - **Área do Conhecimento:** Ciência da Computação (Ciências Exatas e da Terra)
 
+# Inovação
+
+O projeto destaca-se pela sua inovação ao focar no desenvolvimento de um controlador de ruídos personalizado para ambientes educacionais. A sua aplicação planejada nas salas de aula e laboratórios do Instituto Federal de Educação, Ciência e
+Tecnologia do Rio Grande do Norte representa uma abordagem pioneira para criar espaços de aprendizado mais silenciosos e propícios ao ensino, melhorando a qualidade da educação e o bem-estar dos estudantes.
+
 # Equipe e Formas de Contato
 
 <table style>
