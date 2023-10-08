@@ -45,4 +45,4 @@ Nossa equipe utilizam as seguintes tecnologias para o desenvolvimento do nosso p
 
 Para acessar a documentação completa do projeto, incluindo informações detalhadas como layout eletrico do protótipos, componetes e códigos, visite o seguinte link:
 
-[Documentação do Projeto](doc/README.md)
+[Documentação do Projeto](doc/)
