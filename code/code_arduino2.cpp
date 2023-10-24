@@ -1,36 +1,68 @@
-const int microphonePin = A0; //pino analógico MIC - Braco
-const int ledPin = 2;         //pino digital conectado ao LED - Amarelo
+// Inclui a biblioteca File
+#include <SD.h>
 
-int threshold = 40;           //valor limiar em decibeis (NBR 10152 da ABNT)
+// Cria as constantes para os pinos do Arduino
+const int microphonePin = A0; //pino analógico MIC - Braco
+const int ledPins[] = {3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13}; //pinos digitais conectados aos LEDs
+
+// Cria uma constante para o nome do arquivo
+const char *filename = "dados.txt";
+
+// Declara as variáveis
 int analogValue;              //leitura analogica
 float volts;                  //tensão medida
 float dB;                     //valor em decibéis
+int ledsOn = 0;               //número de LEDs acesos
 
+// Configura os pinos do Arduino
 void setup() {
-  pinMode(ledPin, OUTPUT);    //pino do LED como saída
+  for (int i = 0; i < sizeof(ledPins) / sizeof(ledPins[0]); i++) {
+    pinMode(ledPins[i], OUTPUT); //pinos dos LEDs como saída
+  }
   Serial.begin(9600);         //comunicação serial para monitoramento (opcional)
 }
 
+// Loop principal
 void loop() {
-  analogValue = analogRead(microphonePin);   //lê o valor do sensor de som pelo MIC
+  // Lê o valor do sensor de som pelo MIC
+  analogValue = analogRead(microphonePin);
 
-  //convertendo o valor analógico em volts (5V)
+  // Converte o valor analógico em volts (5V)
   volts = analogValue * (5.0 / 1023.0);
 
-  //calculo do valor em decibéis (verificar calibração sempre)
-  //calculo aproximado, pode variar dependendo das características do sensor de som
+  // Calcula o valor em decibéis (verificar calibração sempre)
+  // Cálculo aproximado, pode variar dependendo das características do sensor de som
   dB = 20 * log10(volts / 0.0063);
 
-  if (dB > threshold) {
-    digitalWrite(ledPin, HIGH);  //acende o LED som acima do permitido
-  } else {
-    digitalWrite(ledPin, LOW);   //apaga o LED se o som for menor
+  // Calcula o número de LEDs a serem acesos
+  ledsOn = (dB / 4) + 1;
+
+  // Acende os LEDs
+  for (int i = 0; i < ledsOn; i++) {
+    digitalWrite(ledPins[i], HIGH);
   }
 
-  //exibe o valor em decibéis no monitor serial para monitoramento
-  //para painel degital
+  // Mostra o valor em decibéis no monitor serial
   Serial.print("Valor em dB: ");
   Serial.println(dB);
 
-  delay(100);  //pequeno atraso para evitar leituras rápidas demais
+  /* 
+  // Create a File object using the SD class
+  File file = SD.open(filename, FILE_WRITE);
+  
+  if (file) {  // Check if the file was opened successfully
+    // Write the value to the file
+    file.print(dB);
+    file.print("\n");
+  
+    // Close the file
+    file.close();
+  } else {
+    // Handle error opening the file
+    Serial.println("Erro ao abrir o arquivo");
+  }
+
+  */
+  
+  delay(1000);
 }
